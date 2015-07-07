@@ -1,6 +1,1 @@
-# Ignore Mac system files.
-._*
-
-# Ignore sass-cache files.
-*.sass-cache*
-*.scssc
+node_modules/
