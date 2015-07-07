@@ -1,6 +1,6 @@
 {
   "name": "Less.jquery.mmenu",
-  "description": "Less port of jquery.mmenu",
+  "description": "Less port of jquery.mmenu v5.3.1",
   "author": "Hugo Silva",
   "devDependencies": {
     "grunt": "^0.4.5",

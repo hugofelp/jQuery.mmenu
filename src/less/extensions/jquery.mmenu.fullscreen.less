@@ -17,8 +17,9 @@
 
 .mm_sizing_zposition( @mm_fs_class,
 	@mm_fs_full, @mm_fs_min, @mm_fs_max );
-	
-html.mm-opened@{mm_fs_class} .mm-page
+
+@sel-mm-opened: ~'html.mm-opened@{mm_fs_class} .mm-page';
+@{sel-mm-opened}
 {
 	box-shadow: none !important;
 }

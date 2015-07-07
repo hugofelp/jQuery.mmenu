@@ -30,16 +30,12 @@
 //	Borders
 .mm_border( @border, @pseudo, @pos1, @pos2, @pos3 )
 {
-	&:@{pseudo}
-	{
-		content: '';
-		border-@{border}-width: 1px;
-		border-@{border}-style: solid;
+    @compundSelector: ~'&:@{pseudo}';
+	@{compundSelector}
+    {
+		content: ~"'';border-@{border}-width:1px;border-@{border}-style:solid;@{pos1}: 0;@{pos2}: 0;@{pos3}: 0";
 		display: block;
 		position: absolute;
-		@{pos1}: 0;
-		@{pos2}: 0;
-		@{pos3}: 0;
 	}
 }
 .mm_border_top
@@ -61,24 +57,26 @@
 
 .mm_navbar_positioning( @pos, @nr )
 {
-	.mm-navbar-@{pos}-@{nr}
+    @sel: ~'.mm-navbar-@{pos}-@{nr}';
+	@{sel}
 	{
-		@{pos}: @mm_navbarHeight * ( @nr - 1 );
+		-my-hack: ~"0; @{pos}:" @mm_navbarHeight * ( @nr - 1 );
 	}
 
-	.mm-hasnavbar-@{pos}-@{nr}
+    @sel2: ~'.mm-hasnavbar-@{pos}-@{nr}';
+	@{sel2}
 	{
 		.mm-panel
 		{
-			@{pos}: @mm_navbarHeight * @nr;
+			-my-hack: ~"0; @{pos}:" (@mm_navbarHeight * @nr);
 		}
 		.mm-indexer
 		{
-			@{pos}: @mm_padding + ( @mm_navbarHeight * @nr );
+			-my-hack: ~"0; @{pos}:" @mm_padding + ( @mm_navbarHeight * @nr );
 		}
         
-        .if-top() when (@pos = 'top') {
-        	@{pos}: @mm_navbarHeight * @nr;
+        .if-top() when (@pos = top) {
+        	-my-hack: ~"0; @{pos}:" @mm_navbarHeight * @nr;
         }
 		.mm-fixeddivider
 		{
@@ -88,14 +86,16 @@
 }
 .mm_navbar_sizing( @nr )
 {
-	.mm-navbar-size-@{nr}
+    @sel: ~'.mm-navbar-size-@{nr}';
+	@{sel}
 	{
 		height: @mm_navbarHeight * @nr;
 	}
 }
 .mm_navbar_content( @nr )
 {
-	.mm-navbar-content-@{nr} > *
+    @sel: ~'.mm-navbar-content-@{nr} > *';
+	@{sel}
 	{
 		width: round( 100% / @nr * 100 ) / 100;
 	}
@@ -105,7 +105,8 @@
 //	Iconpanels
 .mm_iconpanel_positioning( @nr )
 {
-	.mm-iconpanel .mm-panel.mm-iconpanel-@{nr}
+    @sel: ~'.mm-iconpanel .mm-panel.mm-iconpanel-@{nr}';
+	@{sel}
 	{
 		left: @mm_iconpanelWidth * @nr;
 	}
@@ -115,11 +116,7 @@
 //	Misc
 .mm_vendor_prefix( @prop, @val )
 {
-	-webkit-@{prop}: @val;
-	-moz-@{prop}: @val;
-	-ms-@{prop}: @val;
-	-o-@{prop}: @val;
-	@{prop}: @val;
+    -my-hack: ~"0; -webkit-@{prop}: @{val}; -moz-@{prop}: @{val}; -ms-@{prop}: @{val}; -o-@{prop}: @{val}; @{prop}: @{val}";
 }
 .mm_webkit_prefix( @prop, @val )
 {

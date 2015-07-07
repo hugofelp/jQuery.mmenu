@@ -4,7 +4,8 @@
 	@emphasizedBg: @mm_emphasizedBackgroundColor, @highlightedBg: @mm_highlightedBackgroundColor,
 	@borderColor: @mm_borderColor
 ) {
-	.mm-menu@{cls}
+    @sel: ~'.mm-menu@{cls}';
+	@{sel}
 	{
 		background: @baseBg;
 		color: @color;
@@ -76,7 +77,8 @@
 .mm_colors_checks( @cls: "",
 	@color: @mm_textColor
 ) {
-	.mm-menu@{cls} label.mm-check:before
+    @sel: ~'.mm-menu@{cls} label.mm-check:before';
+	@{sel}
 	{
 		border-color: @color;
 	}
@@ -85,7 +87,8 @@
 .mm_colors_counters( @cls: "",
 	@dimmedColor: @mm_dimmedTextColor
 ) {
-	.mm-menu@{cls} em.mm-counter
+    @sel: ~'.mm-menu@{cls} em.mm-counter';
+	@{sel}
 	{
 		color: @dimmedColor;
 	}
@@ -94,7 +97,8 @@
 .mm_colors_dividers( @cls: "",
 	@highlightedBg: @mm_highlightedBackgroundColor
 ) {
-	.mm-menu@{cls}
+    @sel: ~'.mm-menu@{cls}';
+	@{sel}
 	{
 		.mm-fixeddivider span
 		{
@@ -107,7 +111,8 @@
 	@baseBg: @mm_backgroundColor,
 	@borderColor: @mm_borderColor
 ) {
-	.mm-menu.mm-iconpanel@{cls}
+    @sel: ~'.mm-menu.mm-iconpanel@{cls}';
+	@{sel}
 	{
 		.mm-panel.mm-opened
 		{
@@ -123,7 +128,8 @@
 .mm_colors_pageshadow( @cls: "",
 	@pageShadow: @mm_pageShadow
 ) {
-	.mm-menu.mm-pageshadow@{cls}
+    @sel: ~'.mm-menu.mm-pageshadow@{cls}';
+	@{sel}
 	{
 		&:after
 		{
@@ -140,7 +146,8 @@
 	@inputBg: @mm_inputBackgroundColor, @color: @mm_textColor,
 	@dimmedColor: @mm_dimmedTextColor
 ) {
-	.mm-menu@{cls}
+    @sel: ~'.mm-menu@{cls}';
+	@{sel}
 	{
 		.mm-search input
 		{
@@ -157,7 +164,8 @@
 .mm_colors_sectionindexer( @cls: "",
 	@color: @mm_dimmedTextColor
 ) {
-	.mm-menu@{cls} .mm-indexer a
+    @sel: ~'.mm-menu@{cls} .mm-indexer a';
+	@{sel}
 	{
 		color: @color;
 	}
@@ -167,7 +175,8 @@
 	@buttonBg: @mm_backgroundColor,
 	@offBg: @mm_borderColor, @onBg: @mm_toggleCheckedColor
 ) {
-	.mm-menu@{cls}
+    @sel: ~'.mm-menu@{cls}';
+	@{sel}
 	{
 		label.mm-toggle
 		{
